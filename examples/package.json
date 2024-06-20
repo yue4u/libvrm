@@ -2,10 +2,27 @@
   "name": "libvrm-examples",
   "version": "0.0.0",
   "private": "true",
+  "type": "module",
   "scripts": {
-    "start": "serve"
+    "start": "vite -c vite.config.ts vrm-viewer",
+    "start:vrm-viewer": "vite -c vite.config.ts vrm-viewer",
+    "start:use-vrm": "vite -c vite.config.ts use-vrm"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "^2.1.2",
+    "@pixiv/three-vrm-animation": "^2.1.2",
+    "@react-three/fiber": "^8.16.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "three": "^0.164.1",
+    "use-vrm": "file:../packages/use-vrm"
   },
   "devDependencies": {
-    "serve": "^14.2.3"
+    "@types/node": "^20.14.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.2.22",
+    "@types/three": "^0.164.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.3.1"
   }
 }
