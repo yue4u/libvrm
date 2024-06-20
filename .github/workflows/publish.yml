@@ -17,9 +17,10 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - name: install pnpm
         run: npm i pnpm@9 -g
-      - run:
-          - pnpm install
-          - pnpm -r build
-          - pnpm -r publish --provenance --access public
+      - name: publish
+        run: |
+          pnpm install
+          pnpm -r build
+          pnpm -r publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
