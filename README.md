@@ -9,4 +9,13 @@
 
 The <vrm-viewer /> web component for displaying [VRM](https://vrm.dev/en/) models. Powered by [model-viewer](https://modelviewer.dev/) and [pixiv/three-vrm](https://github.com/pixiv/three-vrm)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yue4u/libvrm/tree/main/examples?file=index.html)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yue4u/libvrm/tree/main/examples?file=vrm-viewer/index.html&startScript=start:vrm-viewer)
+
+
+## [`useVRM`](./packages/use-vrm/README.md)
+
+The `useVRM` hook for displaying [VRM](https://vrm.dev/en/) models. Powered by
+[react-three-fiber](https://github.com/pmndrs/react-three-fiber) and
+[pixiv/three-vrm](https://github.com/pixiv/three-vrm)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yue4u/libvrm/tree/main/examples?file=use-vrm/App.tsx&startScript=start:use-vrm)

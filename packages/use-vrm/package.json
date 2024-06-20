@@ -1,0 +1,47 @@
+{
+  "name": "use-vrm",
+  "version": "0.0.0",
+  "description": "react three-fiber hooks for loading vrm",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "province": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yue4u/libvrm.git",
+    "directory": "packages/use-vrm"
+  },
+  "type": "module",
+  "main": "dist/use-vrm.js",
+  "types": "dist/use-vrm.d.ts",
+  "scripts": {
+    "build": "pnpm clean && pnpm /build:.*/",
+    "build:tsc": "tsc",
+    "clean": "rm -rf dist",
+    "prepublish": "pnpm build"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/use-vrm.js"
+    }
+  },
+  "keywords": [
+    "three",
+    "VRM"
+  ],
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "src",
+    "dist"
+  ],
+  "peerDependencies": {
+    "@pixiv/three-vrm": "2.*",
+    "@pixiv/three-vrm-animation": "2.*",
+    "@react-three/fiber": "8.*",
+    "@types/react": "18.*",
+    "@types/three": "^0.164.0",
+    "react": "18.*",
+    "three": "^0.164.0"
+  }
+}

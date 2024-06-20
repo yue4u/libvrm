@@ -17,4 +17,4 @@ The <vrm-viewer /> web component for displaying [VRM](https://vrm.dev/en/) model
 
 ## Example
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yue4u/libvrm/examples)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/yue4u/libvrm/tree/main/examples?file=vrm-viewer/index.html&startScript=start:vrm-viewer)
