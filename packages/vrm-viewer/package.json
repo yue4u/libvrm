@@ -4,7 +4,7 @@
   "description": "The <vrm-viewer /> web component",
   "license": "Apache-2.0",
   "publishConfig": {
-    "province": true
+    "provenance": true
   },
   "repository": {
     "type": "git",
