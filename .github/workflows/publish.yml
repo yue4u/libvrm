@@ -24,6 +24,7 @@ jobs:
         run: |
           pnpm install
           pnpm -r build
-          pnpm -r publish --provenance --access public
+          pnpm -r publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
