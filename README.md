@@ -14,6 +14,8 @@ The <vrm-viewer /> web component for displaying [VRM](https://vrm.dev/en/) model
 
 ## [`useVRM`](./packages/use-vrm/README.md)
 
+[![npm version](https://badge.fury.io/js/use-vrm.svg)](https://badge.fury.io/js/use-vrm)
+
 The `useVRM` hook for displaying [VRM](https://vrm.dev/en/) models. Powered by
 [react-three-fiber](https://github.com/pmndrs/react-three-fiber) and
 [pixiv/three-vrm](https://github.com/pixiv/three-vrm)
