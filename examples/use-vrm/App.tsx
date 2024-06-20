@@ -29,6 +29,7 @@ export default function App() {
   return (
     <Suspense fallback={<>loading</>}>
       <Canvas
+        flat
         camera={{
           fov: 30,
           near: 0.1,
