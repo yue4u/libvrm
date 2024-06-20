@@ -1,0 +1,14 @@
+{
+  "name": "libvrm-examples",
+  "version": "0.0.0",
+  "private": "true",
+  "scripts": {
+    "start": "serve"
+  },
+  "engines": {
+    "pnpm": ">= 9"
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}

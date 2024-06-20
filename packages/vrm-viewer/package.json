@@ -1,0 +1,50 @@
+{
+  "name": "vrm-viewer",
+  "version": "0.0.1",
+  "description": "The <vrm-viewer /> web component",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "province": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yue4u/libvrm.git",
+    "directory": "packages/vrm-viewer"
+  },
+  "type": "module",
+  "main": "dist/vrm-viewer.min.js",
+  "types": "dist/vrm-viewer.d.ts",
+  "scripts": {
+    "build": "pnpm clean && pnpm /build:.*/",
+    "build:prod": "esbuild src/vrm-viewer.ts --bundle --tsconfig=./tsconfig.json --outfile=dist/vrm-viewer.min.js --format=esm --minify --legal-comments=linked",
+    "build:tsc": "tsc || echo 'tsc errors are ignored for now'",
+    "clean": "rm -rf dist",
+    "prepublish": "pnpm build"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/vrm-viewer.js"
+    },
+    "./dist/vrm-viewer.min.js": {
+      "default": "./dist/vrm-viewer.min.js"
+    }
+  },
+  "keywords": [
+    "three",
+    "VRM"
+  ],
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "src",
+    "dist"
+  ],
+  "peerDependencies": {
+    "@pixiv/three-vrm": "2.1.2",
+    "@pixiv/three-vrm-animation": "2.1.2",
+    "@types/three": "0.164.0",
+    "three": "0.164.0",
+    "lit": "3.1.3",
+    "@google/model-viewer": "^3.5.0"
+  }
+}

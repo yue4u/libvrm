@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>vrm-viewer example</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style>
+		body {
+			margin: 0;
+		}
+
+		canvas {
+			display: block;
+		}
+
+		vrm-viewer {
+			width: 100vw;
+			height: 100vh;
+		}
+	</style>
+</head>
+
+<body>
+	<vrm-viewer camera-controls touch-action="pan-y" tone-mapping="neutral"
+		src="./assets/VRM1_Constraint_Twist_Sample.vrm" vrmaSrc="./assets/idle_loop.vrma" />
+	<script type="module" src="https://cdn.jsdelivr.net/npm/vrm-viewer@0.0.1/dist/vrm-viewer.min.js">
+	</script>
+</body>
+
+</html>
