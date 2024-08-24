@@ -117,6 +117,9 @@ export const VRMMixin = <T extends Constructor<ModelViewerElementBase>>(
     vrmaSrc: string | null = null;
     currentVrmaSrc: string | null = null;
 
+    @property({ type: Boolean, attribute: "always-update" })
+    alwaysUpdate: boolean = false;
+
     protected [$vrmaMixer]: THREE.AnimationMixer | null = null;
     protected [$vrmaReady]: boolean | null = null;
 
@@ -143,12 +146,15 @@ export const VRMMixin = <T extends Constructor<ModelViewerElementBase>>(
       if (this[$vrmaReady] === null) {
         // no vrma is specified
         this.vrm?.update(deltaForVrm);
-      } else if (this[$vrmaReady] === true) {
+      } else if (this[$vrmaReady]) {
         // wait until vrma is ready too
         // TODO: allow crossfade
         this.vrm?.update(deltaForVrm);
         this[$vrmaMixer]?.update(deltaForVrm);
-        // always queue render since some mixins(camera-controls) may avoid render in some conditions
+      }
+
+      if (this.alwaysUpdate || this[$vrmaReady]) {
+        // try to queue render since some mixins(camera-controls) may avoid render in some conditions
         this[$needsRender]();
       }
     }
