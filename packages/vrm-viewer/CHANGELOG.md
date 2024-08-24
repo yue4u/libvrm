@@ -1,5 +1,11 @@
 # vrm-viewer
 
+## 0.0.3
+
+### Patch Changes
+
+- add always-update attribute
+
 ## 0.0.2
 
 ### Patch Changes
