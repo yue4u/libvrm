@@ -1,5 +1,11 @@
 # vrm-viewer
 
+## 0.0.4
+
+### Patch Changes
+
+- fix: rotate VRM0 correctly
+
 ## 0.0.3
 
 ### Patch Changes

@@ -68,8 +68,6 @@ export class ModelViewerVRMInstance extends ModelViewerGLTFInstance {
     lookAtQuatProxy.name = "lookAtQuaternionProxy";
     vrm.scene.add(lookAtQuatProxy);
 
-    VRMUtils.rotateVRM0(vrm);
-
     return prepared;
   }
 
@@ -178,6 +176,7 @@ export const VRMMixin = <T extends Constructor<ModelViewerElementBase>>(
     async [$onModelLoad]() {
       // skip calling super as it produces errors
       try {
+        VRMUtils.rotateVRM0(this.vrm);
         super[$onModelLoad]();
       } catch (e: unknown) {
         if ((e as Error)?.message?.includes("'materials'")) {
