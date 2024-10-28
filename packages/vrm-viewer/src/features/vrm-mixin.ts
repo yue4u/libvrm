@@ -50,23 +50,28 @@ export class ModelViewerVRMInstance extends ModelViewerGLTFInstance {
       delete prepared[$correlatedSceneGraph];
     }
 
-    const vrm = prepared.userData.vrm;
-
+    const vrm = prepared.userData.vrm as VRM;
     VRMUtils.removeUnnecessaryVertices(prepared.scene);
     VRMUtils.removeUnnecessaryJoints(prepared.scene);
 
     // TODO: expose light control
-    const light = new THREE.DirectionalLight(0xffffff, Math.PI);
-    light.position.set(1.0, 1.0, 1.0);
-    vrm.scene.add(light);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2.4);
+
+    // FIXME: remove this workaround
+    const isVrm0 = vrm.meta.metaVersion === "0";
+    const lightZ = isVrm0 ? -1 : 1;
+    directionalLight.position.set(2.0, 2.0, 2.0 * lightZ).normalize();
+    vrm.scene.add(directionalLight);
 
     vrm.scene.traverse((obj: THREE.Object3D) => {
       obj.frustumCulled = false;
     });
 
-    const lookAtQuatProxy = new VRMLookAtQuaternionProxy(vrm.lookAt);
-    lookAtQuatProxy.name = "lookAtQuaternionProxy";
-    vrm.scene.add(lookAtQuatProxy);
+    if (vrm.lookAt) {
+      const lookAtQuatProxy = new VRMLookAtQuaternionProxy(vrm.lookAt);
+      lookAtQuatProxy.name = "lookAtQuaternionProxy";
+      vrm.scene.add(lookAtQuatProxy);
+    }
 
     return prepared;
   }
@@ -107,6 +112,8 @@ export declare interface VRMInterface {
   vrm: VRM | undefined;
 }
 
+type TrackingMode = "portrait";
+
 export const VRMMixin = <T extends Constructor<ModelViewerElementBase>>(
   ModelViewerElement: T,
 ): Constructor<VRMInterface> & T => {
@@ -117,6 +124,9 @@ export const VRMMixin = <T extends Constructor<ModelViewerElementBase>>(
 
     @property({ type: Boolean, attribute: "always-update" })
     alwaysUpdate: boolean = false;
+
+    @property({ type: String })
+    tracking: TrackingMode | null = null;
 
     protected [$vrmaMixer]: THREE.AnimationMixer | null = null;
     protected [$vrmaReady]: boolean | null = null;
@@ -162,6 +172,11 @@ export const VRMMixin = <T extends Constructor<ModelViewerElementBase>>(
      */
     connectedCallback() {
       super.connectedCallback();
+
+      if (this.tracking != null) {
+        this.bindTracking();
+        return;
+      }
 
       const vrmaSrc = this.vrmaSrc;
       if (vrmaSrc !== null && vrmaSrc != this.currentVrmaSrc) {
@@ -213,6 +228,19 @@ export const VRMMixin = <T extends Constructor<ModelViewerElementBase>>(
 
       this[$vrmaMixer] = mixer;
       this[$vrmaReady] = true;
+    }
+
+    async bindTracking() {
+      this.alwaysUpdate = true;
+
+      const getVRM = () => this.vrm;
+
+      import("libvrm").then((lib) => {
+        lib.createTracking({
+          cameraCapture: document.createElement("video"),
+          getVRM,
+        });
+      });
     }
 
     get vrm() {

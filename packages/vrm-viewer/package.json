@@ -1,6 +1,6 @@
 {
   "name": "vrm-viewer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The <vrm-viewer /> web component",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -39,6 +39,9 @@
     "src",
     "dist"
   ],
+  "devDependencies": {
+    "libvrm": "workspace:*"
+  },
   "peerDependencies": {
     "@pixiv/three-vrm": "2.1.2",
     "@pixiv/three-vrm-animation": "2.1.2",

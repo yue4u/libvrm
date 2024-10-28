@@ -34,6 +34,33 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
 
+  packages/libvrm:
+    dependencies:
+      '@mediapipe/camera_utils':
+        specifier: ^0.3.1675466862
+        version: 0.3.1675466862
+      '@mediapipe/control_utils':
+        specifier: ^0.6.1675466023
+        version: 0.6.1675466023
+      '@mediapipe/drawing_utils':
+        specifier: ^0.3.1675466124
+        version: 0.3.1675466124
+      '@mediapipe/holistic':
+        specifier: ^0.5.1675471629
+        version: 0.5.1675471629
+      '@pixiv/three-vrm':
+        specifier: 2.1.2
+        version: 2.1.2(@types/three@0.164.0)(three@0.164.0)
+      '@pixiv/three-vrm-animation':
+        specifier: 2.1.2
+        version: 2.1.2(@types/three@0.164.0)(three@0.164.0)
+      '@types/three':
+        specifier: 0.164.0
+        version: 0.164.0
+      kalidokit:
+        specifier: ^1.1.5
+        version: 1.1.5
+
   packages/use-vrm:
     dependencies:
       '@pixiv/three-vrm':
@@ -78,6 +105,10 @@ importers:
       three:
         specifier: 0.164.0
         version: 0.164.0
+    devDependencies:
+      libvrm:
+        specifier: workspace:*
+        version: link:../libvrm
 
 packages:
 
@@ -310,6 +341,18 @@ packages:
 
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
+
+  '@mediapipe/camera_utils@0.3.1675466862':
+    resolution: {integrity: sha512-siuXBoUxWo9WL0MeAxIxvxY04bvbtdNl7uCxoJxiAiRtNnCYrurr7Vl5VYQ94P7Sq0gVq6PxIDhWWeZ/pLnSzw==}
+
+  '@mediapipe/control_utils@0.6.1675466023':
+    resolution: {integrity: sha512-CB+L71vUJJSqvULGsZGfqkEiqywoCB898MiM6qWGrk8t5El0HVmHrQbsh2Gx3/N/V2xlYzoU43Wwr2FEAIFHzg==}
+
+  '@mediapipe/drawing_utils@0.3.1675466124':
+    resolution: {integrity: sha512-/IWIB/iYRMtiUKe3k7yGqvwseWHCOqzVpRDfMgZ6gv9z7EEimg6iZbRluoPbcNKHbYSxN5yOvYTzUYb8KVf22Q==}
+
+  '@mediapipe/holistic@0.5.1675471629':
+    resolution: {integrity: sha512-qY+cxtDeSOvVtevrLgnodiwXYaAtPi7dHZtNv/bUCGEjFicAOYtMmrZSqMmbPkTB2+4jLnPF1vgshkAqQRSYAw==}
 
   '@monogrid/gainmap-js@3.0.5':
     resolution: {integrity: sha512-53sCTG4FaJBaAq/tcufARtVYDMDGqyBT9i7F453pWGhZ5LqubDHDWtYoHo9VhQqMcHTEexdJqSsR58y+9HVmQA==}
@@ -952,6 +995,9 @@ packages:
 
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
+
+  kalidokit@1.1.5:
+    resolution: {integrity: sha512-cLaPfCK5UB1QUesFSF12s1/ZsOz4FMcaZDqfFoIYYAzouAjzreishAKIMuoN4zhz2KLuJudGKYWVjI+VVb0W1Q==}
 
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -1759,6 +1805,14 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
+  '@mediapipe/camera_utils@0.3.1675466862': {}
+
+  '@mediapipe/control_utils@0.6.1675466023': {}
+
+  '@mediapipe/drawing_utils@0.3.1675466124': {}
+
+  '@mediapipe/holistic@0.5.1675471629': {}
+
   '@monogrid/gainmap-js@3.0.5(three@0.164.0)':
     dependencies:
       promise-worker-transferable: 1.0.4
@@ -2478,6 +2532,8 @@ snapshots:
   jsonfile@4.0.0:
     optionalDependencies:
       graceful-fs: 4.2.11
+
+  kalidokit@1.1.5: {}
 
   kind-of@6.0.3: {}
 

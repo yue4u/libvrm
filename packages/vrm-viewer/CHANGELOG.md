@@ -1,5 +1,11 @@
 # vrm-viewer
 
+## 0.0.5
+
+### Patch Changes
+
+- feat: add experimental tracking support tracking property
+
 ## 0.0.4
 
 ### Patch Changes
