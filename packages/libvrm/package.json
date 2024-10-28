@@ -1,0 +1,54 @@
+{
+  "name": "libvrm",
+  "version": "0.0.1",
+  "description": "",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yue4u/libvrm.git",
+    "directory": "packages/libvrm"
+  },
+  "type": "module",
+  "main": "dist/libvrm.min.js",
+  "types": "dist/libvrm.d.ts",
+  "scripts": {
+    "build": "pnpm clean && pnpm /build:.*/",
+    "build:prod": "esbuild src/libvrm.ts --bundle --tsconfig=./tsconfig.json --outfile=dist/libvrm.min.js --format=esm --minify --legal-comments=linked",
+    "build:tsc": "tsc",
+    "clean": "rm -rf dist",
+    "prepublish": "pnpm build"
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/libvrm.js"
+    },
+    "./dist/libvrm.min.js": {
+      "default": "./dist/libvrm.min.js"
+    }
+  },
+  "keywords": [
+    "three",
+    "VRM"
+  ],
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "src",
+    "dist"
+  ],
+  "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/control_utils": "^0.6.1675466023",
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/holistic": "^0.5.1675471629",
+    "kalidokit": "^1.1.5"
+  },
+  "peerDependencies": {
+    "@pixiv/three-vrm": "2.1.2",
+    "@pixiv/three-vrm-animation": "2.1.2",
+    "@types/three": "0.164.0"
+  }
+}
