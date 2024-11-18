@@ -1,6 +1,6 @@
 {
   "name": "use-vrm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react three-fiber hooks for loading vrm",
   "license": "Apache-2.0",
   "publishConfig": {

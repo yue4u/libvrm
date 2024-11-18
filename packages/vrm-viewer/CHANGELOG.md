@@ -1,5 +1,11 @@
 # vrm-viewer
 
+## 0.0.6
+
+### Patch Changes
+
+- fix: peer deps range
+
 ## 0.0.5
 
 ### Patch Changes
