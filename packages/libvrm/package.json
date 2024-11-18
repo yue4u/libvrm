@@ -1,6 +1,6 @@
 {
   "name": "libvrm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -16,7 +16,7 @@
   "types": "dist/libvrm.d.ts",
   "scripts": {
     "build": "pnpm clean && pnpm /build:.*/",
-    "build:prod": "esbuild src/libvrm.ts --bundle --tsconfig=./tsconfig.json --outfile=dist/libvrm.min.js --format=esm --minify --legal-comments=linked",
+    "build:prod": "esbuild src/libvrm.ts --bundle --tsconfig=./tsconfig.json --outfile=dist/libvrm.min.js --format=esm --minify --legal-comments=linked --external:three --external:@pixiv/*",
     "build:tsc": "tsc",
     "clean": "rm -rf dist",
     "prepublish": "pnpm build"
@@ -49,6 +49,7 @@
   "peerDependencies": {
     "@pixiv/three-vrm": "2.* || 3.*",
     "@pixiv/three-vrm-animation": "2.* || 3.*",
-    "@types/three": "^0.164.0"
+    "@types/three": "^0.164.0",
+    "three": "^0.164.0"
   }
 }

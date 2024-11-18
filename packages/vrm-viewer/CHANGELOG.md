@@ -1,5 +1,11 @@
 # vrm-viewer
 
+## 0.0.7
+
+### Patch Changes
+
+- fix: allow custom locate file and modify minify config
+
 ## 0.0.6
 
 ### Patch Changes

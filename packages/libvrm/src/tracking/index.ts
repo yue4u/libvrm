@@ -7,18 +7,21 @@ export function createTracking({
     cameraCapture,
     getVRM,
     onReady,
+    locateFile,
 }: {
     cameraCapture: HTMLVideoElement;
     getVRM(): VRM | null;
     onReady?(): Promise<void> | void;
+    locateFile?(path: string, prefix?: string): string;
 }): {
     holistic: Holistic;
     camera: Camera;
 } {
     let ready = false;
     const holistic = new Holistic({
-        locateFile(file) {
-            return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1635989137/${file}`;
+        locateFile(file, prefix) {
+            if (locateFile) return locateFile(file, prefix);
+            return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1675471629/${file}`;
         },
     });
 

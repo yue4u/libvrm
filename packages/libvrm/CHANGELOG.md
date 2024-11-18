@@ -1,5 +1,11 @@
 # libvrm
 
+## 0.0.3
+
+### Patch Changes
+
+- fix: allow custom locate file and modify minify config
+
 ## 0.0.2
 
 ### Patch Changes
