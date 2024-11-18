@@ -1,6 +1,6 @@
 {
   "name": "use-vrm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react three-fiber hooks for loading vrm",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -36,8 +36,8 @@
     "dist"
   ],
   "peerDependencies": {
-    "@pixiv/three-vrm": "2.*",
-    "@pixiv/three-vrm-animation": "2.*",
+    "@pixiv/three-vrm": "2.* || 3.*",
+    "@pixiv/three-vrm-animation": "2.* || 3.*",
     "@react-three/fiber": "8.*",
     "@types/react": "18.*",
     "@types/three": "^0.164.0",

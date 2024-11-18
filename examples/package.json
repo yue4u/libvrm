@@ -9,8 +9,8 @@
     "start:use-vrm": "vite -c vite.config.ts use-vrm"
   },
   "dependencies": {
-    "@pixiv/three-vrm": "^2.1.2",
-    "@pixiv/three-vrm-animation": "^2.1.2",
+    "@pixiv/three-vrm": "2.* || 3.*",
+    "@pixiv/three-vrm-animation": "2.* || 3.*",
     "@react-three/fiber": "^8.16.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
