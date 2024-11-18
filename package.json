@@ -11,8 +11,8 @@
     "pnpm": ">= 9"
   },
   "dependencies": {
-    "@pixiv/three-vrm": "2.1.2",
-    "@pixiv/three-vrm-animation": "2.1.2",
+    "@pixiv/three-vrm": "3.1.6",
+    "@pixiv/three-vrm-animation": "3.1.6",
     "@types/three": "0.164.0",
     "esbuild": "0.21.4",
     "lit": "3.1.3",

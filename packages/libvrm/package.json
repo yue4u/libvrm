@@ -47,8 +47,8 @@
     "kalidokit": "^1.1.5"
   },
   "peerDependencies": {
-    "@pixiv/three-vrm": "2.1.2",
-    "@pixiv/three-vrm-animation": "2.1.2",
-    "@types/three": "0.164.0"
+    "@pixiv/three-vrm": "2.* || 3.*",
+    "@pixiv/three-vrm-animation": "2.* || 3.*",
+    "@types/three": "^0.164.0"
   }
 }
