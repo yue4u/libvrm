@@ -14,7 +14,6 @@ const lerp = Kalidokit.Vector.lerp;
 let oldLookTarget = new THREE.Euler();
 
 // Adapted from kalidokit.
-// NOTE: supports VRM0 only
 export function applyMediapipeResults(
     videoElement: HTMLVideoElement,
     vrm: VRM,
@@ -168,6 +167,11 @@ export function applyMediapipeResults(
         );
         if (!Part) {
             return;
+        }
+
+        if (vrm.meta.metaVersion === "1") {
+            rotation.z = -rotation.z;
+            rotation.x = -rotation.x;
         }
 
         let euler = new THREE.Euler(

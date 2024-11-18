@@ -16,7 +16,6 @@ export function createTracking({
     camera: Camera;
 } {
     let ready = false;
-    let hasWarnVRMVersion = false;
     const holistic = new Holistic({
         locateFile(file) {
             return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1635989137/${file}`;
@@ -35,15 +34,6 @@ export function createTracking({
     holistic.onResults((results: Results) => {
         const vrm = getVRM();
         if (!vrm) return;
-        if (vrm.meta.metaVersion !== "0") {
-            if (!hasWarnVRMVersion) {
-                console.warn(
-                    `VRM version ${vrm.meta.metaVersion} is not supported`,
-                );
-                hasWarnVRMVersion = true;
-            }
-            return;
-        }
 
         applyMediapipeResults(cameraCapture, vrm, results);
 
